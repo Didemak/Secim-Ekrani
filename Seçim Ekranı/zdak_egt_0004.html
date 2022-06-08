@@ -1,0 +1,76 @@
+<!DOCTY "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="application/xht />
+<title>ZDAK_EGT_0004</title>
+</head>
+<body>
+<table class="outerTable">
+  <tr class="normalBoldLarge">
+     <td><h2>Code listing for: ZDAK_EGT_0004</h2>
+<h3> Description: Parameters-Select Option-Checkbox-Radio Button-Sele Seçme ekraný yapma</h3></td>
+   </tr>
+  <tr>
+     <td>
+     <table class="innerTable">
+       <tr>
+          <td>
+   <div class="codeComment">
+*&---------------------------------------------------------------------*<br />
+*&&nbsp;Report&nbsp;ZDAK_EGT_0004<br />
+*&---------------------------------------------------------------------*<br />
+*&<br />
+*&---------------------------------------------------------------------*<br />
+   </div>
+   <div class="code">
+REPORT zdak_egt_0004.<br />
+<br />
+TABLES : zdak_pers_t. " bu tabloyu program içerisinde bu þekilde kullanýyorum.<br />
+DATA gv_persoyad TYPE zdak_persoyad_de. "select-option yazabilmek için data yý tanýmlaman gerekiyor.<br />
+<br />
+<br />
+PARAMETERS : p_num1   TYPE int4, "10 karakterli deðer alan bir sayý oluþturduk.<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;p_persad&nbsp;TYPE&nbsp;zdak_persad_de.<br />
+<br />
+SELECT-OPTIONS: s_persd FOR gv_persoyad,<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;s_perscn&nbsp;FOR&nbsp;zdak_pers_t-pers_cins.&nbsp;"bunu&nbsp;bu&nbsp;þekilde&nbsp;kullanabilmem&nbsp;için&nbsp;yukarýda&nbsp;tables&nbsp;açtým.<br />
+<br />
+PARAMETERS : p_cbox1 AS CHECKBOX.<br />
+<br />
+SELECTION-SCREEN BEGIN OF BLOCK b11 WITH FRAME TITLE TEXT-001.<br />
+&nbsp;&nbsp;PARAMETERS&nbsp;:&nbsp;p_rad1&nbsp;RADIOBUTTON&nbsp;GROUP&nbsp;gr1,&nbsp;"hepsine&nbsp;ayný&nbsp;grubu&nbsp;tanýmladýðýmda&nbsp;"gr1"&nbsp;sadece&nbsp;3&nbsp;ünden&nbsp;brini&nbsp;seçmemi&nbsp;saðlýyor<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;p_rad2&nbsp;RADIOBUTTON&nbsp;GROUP&nbsp;gr1,<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;p_rad3&nbsp;RADIOBUTTON&nbsp;GROUP&nbsp;gr1.<br />
+SELECTION-SCREEN END OF BLOCK b11.<br />
+<br />
+SELECTION-SCREEN BEGIN OF BLOCK b12 WITH FRAME TITLE TEXT-002.<br />
+&nbsp;&nbsp;PARAMETERS&nbsp;:&nbsp;p_rad4&nbsp;RADIOBUTTON&nbsp;GROUP&nbsp;gr2,<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;p_rad5&nbsp;RADIOBUTTON&nbsp;GROUP&nbsp;gr2.<br />
+SELECTION-SCREEN END OF BLOCK b12.<br />
+<br />
+   </div>
+   <div class="codeComment">
+*Text&nbsp;elements<br />
+*----------------------------------------------------------<br />
+*&nbsp;001&nbsp;Yaþ&nbsp;aralýðý<br />
+*&nbsp;002&nbsp;Cinsiyet&nbsp;seçimi<br />
+<br />
+<br />
+*Selection&nbsp;texts<br />
+*----------------------------------------------------------<br />
+*&nbsp;P_CBOX1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Üyelik&nbsp;formunu&nbsp;okudum<br />
+*&nbsp;P_NUM1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Yaþýnýz&nbsp;:<br />
+*&nbsp;P_PERSAD&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Adýnýz&nbsp;:<br />
+*&nbsp;P_RAD1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0-18<br />
+*&nbsp;P_RAD2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;18-40<br />
+*&nbsp;P_RAD3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;40-60<br />
+*&nbsp;P_RAD4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Kadýn<br />
+*&nbsp;P_RAD5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Erkek<br />
+*&nbsp;S_PERSCN&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Cinsiyet&nbsp;:<br />
+*&nbsp;S_PERSD&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Soyadýnýz&nbsp;:<br />
+            </div>
+          </td>
+        </tr>
+      </table>
+      </td>
+      </tr>
